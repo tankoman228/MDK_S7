@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityOnBoard">
+    tools:context=".ActivityOnBoard"
+    android:id="@+id/clMain">
 
     <Button
         android:id="@+id/btnSkip"
