@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="splash_theme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/ic_launcher_background</item>
+    </style>
+
+    <style name="basic_theme" parent="@style/Theme.MDK_S7">
+        <item name="android:statusBarColor">#A7B7BB</item>
+    </style>
+</resources>

@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class ActivityEmailCode extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //Паша Паша лысый гей, он родил Бабушку
+        setContentView(R.layout.activity_email_code);
+
+        getWindow().setBackgroundDrawable(getResources().getDrawable(R.color.white));
     }
 }
