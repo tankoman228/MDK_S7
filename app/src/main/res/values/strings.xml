@@ -9,4 +9,5 @@
     <string name="skip">Попустить</string>
     <string name="welcome"><b>Добро пожаловать!</b></string>
     <string name="signin">Войдите, чтобы пользоваться функциями\nприложения</string>
+    <string name="yandex"><b>Войти с Яндекс</b></string>
 </resources>
