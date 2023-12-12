@@ -51,8 +51,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="370dp"
-        android:layout_height="162dp"
+        android:layout_width="380dp"
+        android:layout_height="231dp"
         android:layout_marginTop="50dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -64,8 +64,9 @@
             android:id="@+id/tvSignInByEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="Вход по E-mail"
-            android:layout_marginBottom="5dp"/>
+            android:textColor="@color/greyText" />
 
         <EditText
             android:id="@+id/etMail"
@@ -81,7 +82,7 @@
             android:id="@+id/btnMailNext"
             android:layout_width="360dp"
             android:layout_height="60dp"
-            android:layout_margin="10dp"
+            android:layout_margin="35dp"
             android:background="@drawable/buttons_blue"
             android:text="Далее" />
     </LinearLayout>
@@ -92,6 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Или войдите с помощью"
+        android:textColor="@color/greyText"
         app:layout_constraintBottom_toTopOf="@+id/btnSignInByYandex"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

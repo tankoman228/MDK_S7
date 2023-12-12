@@ -3,5 +3,8 @@
     android:shape="rectangle">
     <corners android:radius="10dp"/>
     <padding android:left="15dp"/>
+    <stroke
+        android:color="@color/greyEditTextStrokeBlocked"
+        android:width="2dp"/>
     <solid android:color="@color/greyEditTextStrokeBlocked" />
 </shape>

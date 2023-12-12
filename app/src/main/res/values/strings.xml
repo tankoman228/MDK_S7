@@ -10,4 +10,6 @@
     <string name="welcome"><b>Добро пожаловать!</b></string>
     <string name="signin">Войдите, чтобы пользоваться функциями\nприложения</string>
     <string name="yandex"><b>Войти с Яндекс</b></string>
+    <string name="EnterEmailCode"><b>Введите код из E-mail</b></string>
+    <string name="RepeatCode">Отправить код повторно можно\nбудет через 59 секунд</string>
 </resources>
