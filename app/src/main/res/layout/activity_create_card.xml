@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="50dp"
@@ -8,96 +9,121 @@
     android:gravity="center_horizontal"
     tools:context=".ActivityCreateCard">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="95dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/tvCardHeader"
-            android:layout_width="170dp"
-            android:layout_height="72dp"
-            android:layout_weight="1"
-            android:text="@string/Card"
-            android:textColor="@color/black"
-            android:textSize="24dp" />
-
-        <Button
-            android:id="@+id/btnSkipCard"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:text="@string/skip"
-            android:textColor="@color/blueButton" />
-    </LinearLayout>
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvCardText"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:text="@string/CardText"
-        android:textColor="@color/greyText" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/etName"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Имя"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/edittext"
-        android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tvCardHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="1dp"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/Card"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnSkipCard"
+                    app:layout_constraintHorizontal_bias="0.34"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etPatronymic"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Отчество"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext"
-        android:textColor="@color/black"/>
+                <Button
+                    android:id="@+id/btnSkipCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:text="@string/skip"
+                    android:textColor="@color/blueButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etSurname"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Фамилия"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext"
-        android:textColor="@color/black"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <EditText
-        android:id="@+id/etDate"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="date"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edittext"
-        android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tvCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/CardText"
+                android:textColor="@color/greyText" />
 
-    <Spinner
-        android:id="@+id/spGender"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/black"
-        android:background="@drawable/edittext"/>
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/first_name"
+                android:textColor="@color/black" />
 
-    <Button
-        android:id="@+id/btnCreateCard"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
-        android:text="Создать"
-        android:background="@drawable/buttons_blue"
-        android:layout_marginTop="15dp"/>
+            <EditText
+                android:id="@+id/etPatronymic"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/last_name"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/etSurname"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/sirname"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/etDate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext"
+                android:ems="10"
+                android:inputType="date"
+                android:textColor="@color/black"
+                android:hint="@string/birthdate"/>
+
+            <Spinner
+                android:id="@+id/spGender"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext"
+                android:textColor="@color/black"
+                android:hint="gender" />
+
+            <Button
+                android:id="@+id/btnCreateCard"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/buttons_blue"
+                android:enabled="false"
+                android:text="@string/to_create" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

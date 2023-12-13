@@ -20,4 +20,9 @@
     <string name="finish">Завершить</string>
     <string name="next">Далее</string>
     <string name="or_enter_with_help_of">Или войдите с помощью</string>
+    <string name="to_create">Создать</string>
+    <string name="birthdate">Дата рождения</string>
+    <string name="sirname">Фамилия</string>
+    <string name="last_name">Отчество</string>
+    <string name="first_name">Имя</string>
 </resources>
