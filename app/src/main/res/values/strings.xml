@@ -16,4 +16,7 @@
     <string name="PasswordText">Для защиты ваших персональных данных</string>
     <string name="Card"><b>Создание карты\nпациента</b></string>
     <string name="CardText">Без карты пациента вы не сможете заказать анализы.\n\nВ картах пациентов будут храниться результаты анализов вас и ваших близких.</string>
+    <string name="finish">Завершить</string>
+    <string name="next">Далее</string>
+    <string name="or_enter_with_help_of">Или войдите с помощью</string>
 </resources>

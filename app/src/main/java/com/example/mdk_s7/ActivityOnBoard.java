@@ -96,7 +96,7 @@ public class ActivityOnBoard extends AppCompatActivity {
 
                 tvHeader.setText(getString(R.string.Monitoring));
                 tvText.setText(getString(R.string.textMonitoring));
-                btn.setText("Завершить");
+                btn.setText(R.string.finish);
                 break;
         }
 
@@ -113,7 +113,5 @@ public class ActivityOnBoard extends AppCompatActivity {
                 ivDock.startAnimation(a2);
                 break;
         }
-
-
     }
 }
