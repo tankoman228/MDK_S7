@@ -11,7 +11,8 @@
     <string name="signin">Войдите, чтобы пользоваться функциями\nприложения</string>
     <string name="yandex"><b>Войти с Яндекс</b></string>
     <string name="EnterEmailCode"><b>Введите код из E-mail</b></string>
-    <string name="RepeatCode">Отправить код повторно можно\nбудет через 59 секунд</string>
+    <string name="RepeatCode">Отправить код повторно можно\nбудет через </string>
+    <string name="seconds"> секунд</string>
     <string name="CreatePassword"><b>Создайте пароль</b></string>
     <string name="PasswordText">Для защиты ваших персональных данных</string>
     <string name="Card"><b>Создание карты\nпациента</b></string>
