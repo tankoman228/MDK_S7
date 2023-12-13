@@ -6,7 +6,7 @@
     <string name="textAnalysis">Экспресс сбор и получение проб</string>
     <string name="textNotifications">Вы быстро узнаете о результатах</string>
     <string name="textMonitoring">Наши врачи всегда наблюдают\nза вашими показателями здоровья</string>
-    <string name="skip">Попустить</string>
+    <string name="skip">Пропустить</string>
     <string name="welcome"><b>Добро пожаловать!</b></string>
     <string name="signin">Войдите, чтобы пользоваться функциями\nприложения</string>
     <string name="yandex"><b>Войти с Яндекс</b></string>
