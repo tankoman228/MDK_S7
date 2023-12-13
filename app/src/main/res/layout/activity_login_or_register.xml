@@ -9,9 +9,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="412dp"
+        android:layout_width="0dp"
         android:layout_height="101dp"
+        android:layout_marginStart="10sp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="10sp"
         android:orientation="vertical"
         android:paddingLeft="30dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,9 +53,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="380dp"
+        android:layout_width="0dp"
         android:layout_height="231dp"
+        android:layout_marginStart="30sp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="30sp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,22 +74,22 @@
 
         <EditText
             android:id="@+id/etMail"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/edittext"
             android:ems="10"
-            android:inputType="text"
             android:hint="example@mail.ru"
+            android:inputType="text"
             android:textColor="@color/greyText" />
 
         <Button
             android:id="@+id/btnMailNext"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_margin="35dp"
+            android:layout_marginTop="30sp"
             android:background="@drawable/buttons_blue"
-            android:text="@string/next"
-            android:enabled="false"/>
+            android:enabled="false"
+            android:text="@string/next" />
     </LinearLayout>
 
     <TextView
@@ -101,11 +105,13 @@
 
     <Button
         android:id="@+id/btnSignInByYandex"
-        android:layout_width="360dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="48dp"
-        android:text="@string/yandex"
         android:background="@drawable/buttons_white"
+        android:text="@string/yandex"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
