@@ -81,7 +81,7 @@
             android:hint="example@mail.ru"
             android:textColorHint="@color/black"
             android:inputType="text"
-            android:textColor="@color/greyText" />
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/btnMailNext"

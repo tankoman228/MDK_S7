@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class ActivityCreateCard extends AppCompatActivity {
+public class ActivityCreateCard extends AppCompatActivity{
 
     EditText[] ets;
     Spinner sp;
@@ -24,7 +25,13 @@ public class ActivityCreateCard extends AppCompatActivity {
         btn = findViewById(R.id.btnCreateCard);
         sp = findViewById(R.id.spGender);
 
-
+        ArrayAdapter<CharSequence> spAdapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.genders,
+                android.R.layout.simple_spinner_item
+        );
+        spAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(spAdapter);
 
         ets = new EditText[] {
                 findViewById(R.id.etName),
