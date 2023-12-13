@@ -79,9 +79,9 @@
             android:background="@drawable/edittext"
             android:ems="10"
             android:hint="example@mail.ru"
-            android:textColorHint="@color/black"
             android:inputType="text"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black_hint" />
 
         <Button
             android:id="@+id/btnMailNext"

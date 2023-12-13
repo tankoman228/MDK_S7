@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,8 +25,8 @@ public class ActivityCreateCard extends AppCompatActivity{
         getWindow().setBackgroundDrawable(getResources().getDrawable(R.color.white));
 
         btn = findViewById(R.id.btnCreateCard);
-        sp = findViewById(R.id.spGender);
 
+        sp = findViewById(R.id.spGender);
         ArrayAdapter<CharSequence> spAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.genders,
@@ -32,6 +34,17 @@ public class ActivityCreateCard extends AppCompatActivity{
         );
         spAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(spAdapter);
+        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                check_fields();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                check_fields();
+            }
+        });
+
 
         ets = new EditText[] {
                 findViewById(R.id.etName),
@@ -54,9 +67,12 @@ public class ActivityCreateCard extends AppCompatActivity{
 
     void check_fields() {
 
-        //if (sp) TODO: сделай выбор гендера и проверку, выбран ли он
-
         btn.setEnabled(false);
+        if (!sp.getSelectedItem().toString().equals(getResources().getStringArray(R.array.genders)[0]) &&
+                !sp.getSelectedItem().toString().equals(getResources().getStringArray(R.array.genders)[1])) {
+            return;
+        }
+
         for (EditText e: ets) {
             if (e.getText().toString().length() <= 1)
                 return;

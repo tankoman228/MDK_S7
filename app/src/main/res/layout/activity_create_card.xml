@@ -74,7 +74,7 @@
                 android:hint="@string/first_name"
                 android:inputType="text"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black" />
+                android:textColorHint="@color/black_hint" />
 
             <EditText
                 android:id="@+id/etPatronymic"
@@ -83,10 +83,10 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:inputType="text"
                 android:hint="@string/last_name"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black" />
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black_hint" />
 
             <EditText
                 android:id="@+id/etSurname"
@@ -95,10 +95,10 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
-                android:inputType="text"
                 android:hint="@string/sirname"
-                android:textColorHint="@color/black"
-                android:textColor="@color/black" />
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black_hint" />
 
             <EditText
                 android:id="@+id/etDate"
@@ -107,10 +107,10 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext"
                 android:ems="10"
+                android:hint="@string/birthdate"
                 android:inputType="date"
                 android:textColor="@color/black"
-                android:hint="@string/birthdate"
-                android:textColorHint="@color/black"/>
+                android:textColorHint="@color/black_hint" />
 
             <Spinner
                 android:id="@+id/spGender"
@@ -118,9 +118,9 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext"
-                android:textColor="@color/black"
                 android:hint="gender"
-                android:textColorHint="@color/black"/>
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <Button
                 android:id="@+id/btnCreateCard"
