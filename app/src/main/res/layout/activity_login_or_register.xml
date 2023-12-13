@@ -79,6 +79,7 @@
             android:background="@drawable/edittext"
             android:ems="10"
             android:hint="example@mail.ru"
+            android:textColorHint="@color/black"
             android:inputType="text"
             android:textColor="@color/greyText" />
 

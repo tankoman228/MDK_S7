@@ -37,6 +37,7 @@
                     android:text="@string/Card"
                     android:textColor="@color/black"
                     android:textSize="24dp"
+
                     app:layout_constraintEnd_toStartOf="@+id/btnSkipCard"
                     app:layout_constraintHorizontal_bias="0.34"
                     app:layout_constraintStart_toStartOf="parent"
@@ -47,9 +48,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@drawable/buttons_white_bordless"
                     android:text="@string/skip"
                     android:textColor="@color/blueButton"
+                    android:stateListAnimator="@null"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,6 +73,7 @@
                 android:ems="10"
                 android:inputType="text"
                 android:hint="@string/first_name"
+                android:textColorHint="@color/black"
                 android:textColor="@color/black" />
 
             <EditText
@@ -82,6 +85,7 @@
                 android:ems="10"
                 android:inputType="text"
                 android:hint="@string/last_name"
+                android:textColorHint="@color/black"
                 android:textColor="@color/black" />
 
             <EditText
@@ -93,6 +97,7 @@
                 android:ems="10"
                 android:inputType="text"
                 android:hint="@string/sirname"
+                android:textColorHint="@color/black"
                 android:textColor="@color/black" />
 
             <EditText
@@ -104,7 +109,8 @@
                 android:ems="10"
                 android:inputType="date"
                 android:textColor="@color/black"
-                android:hint="@string/birthdate"/>
+                android:hint="@string/birthdate"
+                android:textColorHint="@color/black"/>
 
             <Spinner
                 android:id="@+id/spGender"
@@ -113,7 +119,8 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext"
                 android:textColor="@color/black"
-                android:hint="gender" />
+                android:hint="gender"
+                android:textColorHint="@color/black"/>
 
             <Button
                 android:id="@+id/btnCreateCard"
