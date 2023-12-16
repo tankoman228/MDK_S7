@@ -2,6 +2,7 @@ package com.example.mdk_s7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -45,6 +46,14 @@ public class ActivityCreateCard extends AppCompatActivity{
             }
         });
 
+        findViewById(R.id.btnSkipCard).setOnClickListener(l -> {
+            startActivity(new Intent(this, ActivityMain.class));
+        });
+        findViewById(R.id.btnCreateCard).setOnClickListener(l -> {
+            CardInfo.CardExists = true;
+            startActivity(new Intent(this, ActivityMain.class));
+        });
+
 
         ets = new EditText[] {
                 findViewById(R.id.etName),
@@ -52,7 +61,6 @@ public class ActivityCreateCard extends AppCompatActivity{
                 findViewById(R.id.etPatronymic),
                 findViewById(R.id.etDate)
         };
-
         for (EditText e: ets) {
             e.addTextChangedListener(new TextWatcher() {
                 @Override

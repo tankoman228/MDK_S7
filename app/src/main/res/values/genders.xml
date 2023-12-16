@@ -3,5 +3,7 @@
     <string-array name="genders">
         <item>Мужчина</item>
         <item>Женщина</item>
+        <item>Atack helicopter</item>
+        <item>Heavy battle tank</item>
     </string-array>
 </resources>

@@ -29,6 +29,9 @@ public class ActivityOnBoard extends AppCompatActivity {
 
         getWindow().setBackgroundDrawable(getResources().getDrawable(R.color.white));
 
+        //TODO: Удалить эту строчку нахрен, перед сдачей!
+        startActivity(new Intent(this, ActivityCreateCard.class));
+
         ivDock = findViewById(R.id.ivDoc);
         ivMeth = findViewById(R.id.ivMeth);
         ivTalk = findViewById(R.id.ivTalk);
