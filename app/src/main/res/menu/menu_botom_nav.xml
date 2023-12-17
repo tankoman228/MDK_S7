@@ -5,24 +5,25 @@
         android:id="@+id/itemAnal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/brightreactangle"
-        android:title="Анализы" />
+        android:icon="@drawable/menu_active_analysis"
+        android:title="Анализы"/>
     <item
         android:id="@+id/itemResu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/brightreactangle"
+        android:icon="@drawable/menu_inactive_results"
         android:title="Результаты" />
     <item
         android:id="@+id/itemSupp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/brightreactangle"
+        android:icon="@drawable/menu_inactive_support"
+        android:checked="true"
         android:title="Поддержка" />
     <item
         android:id="@+id/itemProf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/brightreactangle"
+        android:icon="@drawable/menu_inactive_user"
         android:title="Профиль" />
 </menu>

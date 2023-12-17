@@ -27,4 +27,21 @@
     <string name="first_name">Имя</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="add">Добавить</string>
+    <string name="remove">Убрать</string>
+    <!-- Текст для массива тестов-->
+    <string name="test_pcr_name"><b>ПЦР-тест на определение РНК коронавируса стандартный</b></string>
+    <string name="test_pcr_days">2 дня</string>
+    <string name="test_pcr_cost"><b>1800 ₽</b></string>
+    <string name="test_blood_name"><b>Клинический анализ крови с лейкоцитарной формулировкой</b></string>
+    <string name="test_blood_days">1 день</string>
+    <string name="test_blood_cost"><b>690 ₽</b></string>
+    <string name="test_bio_name"><b>Биохимический анализ крови, базовый</b></string>
+    <string name="test_bio_days">1 день</string>
+    <string name="test_bio_cost"><b>2440 ₽</b></string>
+    <string name="test_soy_name"><b>СОЭ (венозная кровь)</b></string>
+    <string name="test_soy_days">3 дня</string>
+    <string name="test_soy_cost"><b>670 ₽</b></string>
+
 </resources>

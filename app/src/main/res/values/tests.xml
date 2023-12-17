@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names">
+        <item>@string/test_pcr_name</item>
+        <item>@string/test_blood_name</item>
+        <item>@string/test_bio_name</item>
+        <item>@string/test_soy_name</item>
+    </string-array>
+    <string-array name="days">
+        <item>@string/test_pcr_days</item>
+        <item>@string/test_blood_days</item>
+        <item>@string/test_bio_days</item>
+        <item>@string/test_soy_days</item>
+    </string-array>
+    <string-array name="cost">
+        <item>@string/test_pcr_cost</item>
+        <item>@string/test_blood_cost</item>
+        <item>@string/test_bio_cost</item>
+        <item>@string/test_soy_cost</item>
+    </string-array>
+</resources>
