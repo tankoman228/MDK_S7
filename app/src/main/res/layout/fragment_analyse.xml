@@ -147,12 +147,14 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Корзина"
-        android:background="@color/blueButton"
+        android:layout_height="60dp"
+        android:text="  Корзина300$"
+        android:drawableLeft="@drawable/basket"
+        android:background="@drawable/buttons_blue"
         android:textColor="@color/white"
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
+        android:gravity="center_vertical"
         android:layout_gravity="bottom|center_horizontal"/>
 </FrameLayout>
