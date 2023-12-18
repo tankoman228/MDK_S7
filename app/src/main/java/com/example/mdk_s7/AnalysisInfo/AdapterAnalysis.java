@@ -21,7 +21,7 @@ public class AdapterAnalysis extends BaseAdapter {
     ArrayList<Analysis> objects, chosen_objects;
 
 
-    AdapterAnalysis(Context context, ArrayList<Analysis> products) {
+    public AdapterAnalysis(Context context, ArrayList<Analysis> products) {
         ctx = context;
         objects = products;
         chosen_objects = new ArrayList<>();
