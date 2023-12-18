@@ -14,11 +14,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mdk_s7.R;
+import com.example.mdk_s7.ToActivityConnectable;
 
 public class AdapterAnalysis extends BaseAdapter {
     Context ctx;
     LayoutInflater lInflater;
-    ArrayList<Analysis> objects, chosen_objects;
+    ArrayList<Analysis> objects;
+
+    public static  ArrayList<Analysis> chosen_objects;
+    public static ToActivityConnectable fragmentAnalyse;
 
 
     public AdapterAnalysis(Context context, ArrayList<Analysis> products) {
@@ -56,15 +60,37 @@ public class AdapterAnalysis extends BaseAdapter {
             view = lInflater.inflate(R.layout.item_tests, parent, false);
         }
 
-        Analysis p = getAnalysis(position);
+        Analysis thisAnalysis = getAnalysis(position);
 
-        ((TextView) view.findViewById(R.id.tvServiceame)).setText(p.Title);
-        ((TextView) view.findViewById(R.id.tvServiceCost)).setText(p.Cost);
-        ((TextView) view.findViewById(R.id.tvServiceDays)).setText(p.Time);
+        ((TextView) view.findViewById(R.id.tvServiceame)).setText(thisAnalysis.Title);
+        ((TextView) view.findViewById(R.id.tvServiceCost)).setText(thisAnalysis.Cost);
+        ((TextView) view.findViewById(R.id.tvServiceDays)).setText(thisAnalysis.Time);
 
         Button btn = view.findViewById(R.id.btnServiceAdd);
+
+        Context context = view.getContext();
         btn.setOnClickListener(v -> {
-            Toast.makeText(btn.getContext(), "gfgfgg", Toast.LENGTH_SHORT).show();
+
+            if (chosen_objects.contains(thisAnalysis)) {
+                chosen_objects.remove(thisAnalysis);
+
+                //Когда нужно убрать из выбранных
+                btn.setBackground(context.getDrawable(R.drawable.buttons_blue));
+                btn.setTextColor(context.getColor(R.color.white));
+                btn.setText(R.string.add);
+
+                fragmentAnalyse.sendMeMessage(false);
+            }
+            else {
+                chosen_objects.add(thisAnalysis);
+
+                //Когда нужно добавить
+                btn.setBackground(context.getDrawable(R.drawable.buttons_white_borders_blue));
+                btn.setTextColor(context.getColor(R.color.blueButton));
+                btn.setText(R.string.remove);
+
+                fragmentAnalyse.sendMeMessage(true);
+            }
         });
 
         return view;
