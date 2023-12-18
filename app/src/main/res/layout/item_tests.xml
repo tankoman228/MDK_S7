@@ -3,9 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:elevation="3dp"
+    android:background="@drawable/background_item_tests">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnServiceAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,6 +15,7 @@
         android:layout_marginEnd="24dp"
         android:background="@drawable/buttons_blue"
         android:text="@string/add"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,21 +36,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:text="TextView"
-        android:textSize="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvServiceCost" />
-
-    <TextView
-        android:id="@+id/tvServiceCost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="56dp"
         android:text="TextView"
         android:textColor="@color/greyText"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvServiceame" />
+
+    <TextView
+        android:id="@+id/tvServiceCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvServiceDays" />
 </androidx.constraintlayout.widget.ConstraintLayout>

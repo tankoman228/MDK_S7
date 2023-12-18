@@ -31,7 +31,7 @@ public class ActivityCreateCard extends AppCompatActivity{
         ArrayAdapter<CharSequence> spAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.genders,
-                android.R.layout.simple_spinner_item
+                R.layout.item_spinner_genders
         );
         spAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(spAdapter);
