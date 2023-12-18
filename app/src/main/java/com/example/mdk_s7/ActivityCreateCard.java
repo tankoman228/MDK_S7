@@ -33,7 +33,7 @@ public class ActivityCreateCard extends AppCompatActivity{
                 R.array.genders,
                 R.layout.item_spinner_genders
         );
-        spAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spAdapter.setDropDownViewResource(R.layout.item_spinner_dropdown_genders);
         sp.setAdapter(spAdapter);
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

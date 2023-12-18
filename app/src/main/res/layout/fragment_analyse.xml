@@ -26,7 +26,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,10 +40,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
                     android:text="Акции и новости"
-                    android:textColor="@color/greyText"
-                    android:textSize="17dp" />
+                    android:layout_marginTop="16dp"
+                    android:textSize="17dp"
+                    android:textColor="@color/greyText"/>
 
                 <HorizontalScrollView
                     android:id="@+id/scrollView2"
@@ -79,13 +81,14 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="16dp"
                     android:text="Каталог анализов"
-                    android:textColor="@color/greyText"
-                    android:textSize="17dp" />
+                    android:textSize="17dp"
+                    android:textColor="@color/greyText"/>
 
                 <HorizontalScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="16dp"
+                    >
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -101,7 +104,7 @@
                             android:background="@drawable/buttons_blue"
                             android:text="Популярные"
                             android:textColor="@color/white"
-                            android:textSize="15dp" />
+                            android:textSize="15dp"/>
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnAnalysisCovid"
@@ -112,7 +115,7 @@
                             android:background="@drawable/buttons_grey"
                             android:text="Covid"
                             android:textColor="@color/greyText"
-                            android:textSize="15dp" />
+                            android:textSize="15dp"/>
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnAnalysisComplex"
@@ -122,25 +125,34 @@
                             android:layout_weight="1"
                             android:background="@drawable/buttons_grey"
                             android:text="Комплексные"
-                            android:textColor="@color/greyText"
-                            android:textSize="15dp" />
+                            android:textSize="15dp"
+                            android:textColor="@color/greyText"/>
                     </LinearLayout>
                 </HorizontalScrollView>
 
                 <ListView
                     android:id="@+id/lvAnalysis"
+                    android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="1dp"
                     android:layout_marginLeft="24dp"
-                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="1dp"
-                    android:layout_marginRight="24dp"
-
-                    android:isScrollContainer="false"
-                    android:nestedScrollingEnabled="false" />
+                    android:layout_marginRight="24dp" />
             </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Корзина"
+        android:background="@color/blueButton"
+        android:textColor="@color/white"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_gravity="bottom|center_horizontal"/>
 </FrameLayout>

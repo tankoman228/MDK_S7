@@ -118,7 +118,7 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edittext"
-                android:hint="gender"
+                android:hint="Пол"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black" />
 

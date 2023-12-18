@@ -8,4 +8,4 @@
     android:ellipsize="marquee"
     android:textAlignment="inherit"
     android:textColor="@color/black"
-    android:background="@color/white"/>
+    android:background="@color/greyEditText"/>
