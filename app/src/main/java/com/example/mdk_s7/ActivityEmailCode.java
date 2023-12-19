@@ -99,13 +99,13 @@ public class ActivityEmailCode extends AppCompatActivity {
 
                 for (int seconds = 60; seconds > 0; seconds--) {
                     try {
-                        Thread.sleep(1000);
-
                         int finalSeconds = seconds;
                         ActivityEmailCode.this.runOnUiThread(() -> {
                             String s = " " + finalSeconds + " ";
                             tvSeconds.setText(getString(R.string.RepeatCode) + s + getString(R.string.seconds));
                         });
+
+                        Thread.sleep(1000);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

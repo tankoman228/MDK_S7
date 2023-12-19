@@ -47,13 +47,13 @@ public class ActivityCreatePassword extends AppCompatActivity {
             if (digits_i < 0)
                 digits_i = 0;
             update_balls();
+            btnSkip.setText(R.string.skip);
         });
     }
 
     void input(int digit) {
 
         if (digits_i == 4) {
-            btnSkip.setText(R.string.continue_);
             return;
         }
 
@@ -62,6 +62,10 @@ public class ActivityCreatePassword extends AppCompatActivity {
         digits[digits_i] = digit;
         digits_i++;
         update_balls();
+
+        if (digits_i == 4) {
+            btnSkip.setText(R.string.continue_);
+        }
     }
 
     void update_balls() {
