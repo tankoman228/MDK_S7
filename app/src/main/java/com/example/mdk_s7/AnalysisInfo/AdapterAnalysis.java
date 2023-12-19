@@ -16,8 +16,13 @@ public class AdapterAnalysis extends BaseAdapter {
     Context ctx;
     LayoutInflater lInflater;
 
+    //ГЛОБАЛЬНАЯ ПЕРЕМЕННАЯ. Объекты, которые можно выбрать в корзину
     public static ArrayList<Analysis> objects;
+
+    //ГЛОБАЛЬНАЯ ПЕРЕМЕННАЯ. Объекты, выбранные в корзину. Не переопределять до переопределения objects
     public static  ArrayList<Analysis> chosen_objects;
+
+    //Для обратной связи с фрагментом FragmentAnalyse
     public static ToActivityConnectable fragmentAnalyse;
 
 

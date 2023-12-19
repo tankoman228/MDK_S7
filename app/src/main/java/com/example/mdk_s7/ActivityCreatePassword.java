@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.RadioButton;
 
 public class ActivityCreatePassword extends AppCompatActivity {
 
     RadioButton[] balls;
+    Button btnSkip;
+
     int[] digits = new int[] {-1, -1, -1, -1};
     int digits_i = 0;
 
@@ -19,7 +22,8 @@ public class ActivityCreatePassword extends AppCompatActivity {
 
         getWindow().setBackgroundDrawable(getResources().getDrawable(R.color.white));
 
-        findViewById(R.id.btnSkipPassword).setOnClickListener(l -> {
+        btnSkip = findViewById(R.id.btnSkipPassword);
+        btnSkip.setOnClickListener(l -> {
             startActivity(new Intent(this, ActivityCreateCard.class));
         });
 
@@ -48,10 +52,12 @@ public class ActivityCreatePassword extends AppCompatActivity {
 
     void input(int digit) {
 
-        if (digits_i == 4)
+        if (digits_i == 4) {
+            btnSkip.setText(R.string.continue_);
             return;
+        }
 
-
+        btnSkip.setText(R.string.skip);
 
         digits[digits_i] = digit;
         digits_i++;

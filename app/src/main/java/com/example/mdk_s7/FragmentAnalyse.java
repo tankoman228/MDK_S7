@@ -19,6 +19,7 @@ import com.example.mdk_s7.AnalysisInfo.*;
 
 import java.util.ArrayList;
 
+//Фрагмент с выбором анализов для перехода в корзину
 public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
 
     public FragmentAnalyse() {
@@ -33,18 +34,19 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
     ImageView ivMoreBg;
     ConstraintLayout clMoreInfo;
 
-    int id_current_type = 0;
+    int current_category_id = 0;
     Analysis selectedAnalysis;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
 
         ivMoreBg = view.findViewById(R.id.ivMoreBackground);
         clMoreInfo = view.findViewById(R.id.llAbout);
-
         listView = view.findViewById(R.id.lvAnalysis);
 
+        //Закрытие доп. инфы об анализе
         view.findViewById(R.id.imageButton).setOnClickListener(l -> {
             ivMoreBg.setVisibility(View.INVISIBLE);
             clMoreInfo.setVisibility(View.INVISIBLE);
@@ -60,11 +62,9 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
             btns_categories[i].setOnClickListener(l -> categoryChosen(ii));
         }
 
+        //Добавить в корзину или убрать из корзины, когда открыта доп. инфа
         btn_add_to_basket = view.findViewById(R.id.btnAddToBin);
         btn_add_to_basket.setOnClickListener(l -> {
-
-            //ivMoreBg.setVisibility(View.INVISIBLE);
-            //clMoreInfo.setVisibility(View.INVISIBLE);
 
             if (AdapterAnalysis.chosen_objects.contains(selectedAnalysis)) {
                 btn_add_to_basket.setBackground(getContext().getDrawable(R.drawable.buttons_blue));
@@ -84,9 +84,11 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
             reload_analysis_list();
         });
 
+        //Кнопка в корзину
         btn_basket = view.findViewById(R.id.button);
         btn_basket.setOnClickListener(l -> startActivity(new Intent(getContext(), ActivityBin.class)));
 
+        //Доп. Инфа об анализе
         tvPrice = view.findViewById(R.id.tvPrice);
         tvPrice.setVisibility(View.INVISIBLE);
 
@@ -100,20 +102,24 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         reload_analysis_list();
     }
 
+    //Выбор категории, изменение цвета кнопок
     private void categoryChosen(int id_type) {
-        btns_categories[id_current_type].setBackground(getContext().getDrawable(R.drawable.buttons_grey));
-        btns_categories[id_current_type].setTextColor(getContext().getColor(R.color.greyText));
+        btns_categories[current_category_id].setBackground(getContext().getDrawable(R.drawable.buttons_grey));
+        btns_categories[current_category_id].setTextColor(getContext().getColor(R.color.greyText));
 
         btns_categories[id_type].setBackground(getContext().getDrawable(R.drawable.buttons_blue));
         btns_categories[id_type].setTextColor(getContext().getColor(R.color.white));
 
-        id_current_type = id_type;
+        current_category_id = id_type;
         reload_analysis_list();
     }
+
+    //сокращение от getContext().getString(id);
     private String gs(int id) {
         return getContext().getString(id);
     }
 
+    //Обновление списка анализов
     private void reload_analysis_list() {
 
         ArrayList<Analysis> ans = new ArrayList<Analysis>();
@@ -151,6 +157,7 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         check_basket_size();
     }
 
+    //Проверка, сколько товаров в корзине и нужно ли вообще отображать кнопку "в корзину"
     private void check_basket_size() {
         if (AdapterAnalysis.chosen_objects.size() > 0) {
             btn_basket.setVisibility(View.VISIBLE);
@@ -158,7 +165,7 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
 
             int price_sum = 0;
             for (Analysis a : AdapterAnalysis.chosen_objects) {
-                price_sum += a.getPrice();
+                price_sum += a.getPrice() * a.countInBasket;
             }
             tvPrice.setText(String.format("%s %S", price_sum, AdapterAnalysis.chosen_objects.get(0).getCurrency()));
         }
@@ -168,12 +175,13 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         }
     }
 
+    //Так мы из адаптера просим фрагмент перепроверить сколько товаров в корзине и нужно ли вообще отображать кнопку "в корзину" из
     @Override
     public void sendMeMessage(Object obj) {
-        boolean i = (boolean) obj;
         check_basket_size();
     }
 
+    //Кладём в корзину, либо наоборот
     @Override
     public void onClickItem(Object obj) {
         Analysis an = (Analysis) obj;
@@ -189,14 +197,17 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
 
         selectedAnalysis = an;
         if (AdapterAnalysis.chosen_objects.contains(selectedAnalysis)) {
+            //Нажали добавить
             btn_add_to_basket.setBackground(getContext().getDrawable(R.drawable.buttons_white_borders_blue));
             btn_add_to_basket.setTextColor(getContext().getColor(R.color.blueButton));
             btn_add_to_basket.setText(R.string.remove);
         }
         else {
+            //Нажали Убрать
             btn_add_to_basket.setBackground(getContext().getDrawable(R.drawable.buttons_blue));
             btn_add_to_basket.setTextColor(getContext().getColor(R.color.white));
             btn_add_to_basket.setText(R.string.add);
+            selectedAnalysis.countInBasket = 1;
         }
     }
 }

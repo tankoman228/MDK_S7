@@ -32,12 +32,12 @@ public class ActivityLoginOrRegister extends AppCompatActivity {
         etEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                check_email(s.toString());
+                //check_email(s.toString());
             }
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 check_email(s.toString());
-                btnEnter.setEnabled(true);
+                //btnEnter.setEnabled(true);
             }
             @Override
             public void afterTextChanged(Editable s) {
@@ -52,7 +52,7 @@ public class ActivityLoginOrRegister extends AppCompatActivity {
                 });
 
                 try {
-                    Thread.sleep(1300);
+                    Thread.sleep(700);
 
                     ActivityLoginOrRegister.this.runOnUiThread(()-> {
                         ActivityLoginOrRegister.this.startActivity(new Intent(ActivityLoginOrRegister.this, ActivityEmailCode.class));

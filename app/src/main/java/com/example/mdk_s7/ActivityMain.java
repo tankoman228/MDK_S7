@@ -11,6 +11,7 @@ import android.util.Log;
 import com.example.mdk_s7.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+//Главная активность с 4 вкладками (фрагментами)
 public class ActivityMain extends AppCompatActivity {
 
     @Override
@@ -23,7 +24,6 @@ public class ActivityMain extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener (item -> {
 
-            Log.d("DEBUG S7", "replace fragment must be");
             int index = item.getItemId();
 
             if (index == R.id.itemAnal)
@@ -41,7 +41,6 @@ public class ActivityMain extends AppCompatActivity {
 
     private void replaceFragment(Fragment fragment) {
 
-        Log.d("DEBUG S7", "replace fragment!");
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.frameMain, fragment);

@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+//Считывание свайпов вправо и влево
 public abstract class OnTouchSwipeListener implements View.OnTouchListener {
 
     private final GestureDetector gestureDetector;

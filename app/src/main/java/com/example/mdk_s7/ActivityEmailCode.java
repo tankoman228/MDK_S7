@@ -95,7 +95,7 @@ public class ActivityEmailCode extends AppCompatActivity {
         new Thread(() -> {
 
             while (true) {
-                //TODO: убрать эту хрень, когда будет готова кнопка переотправки кода
+                //TODO: убрать это, когда будет готова кнопка переотправки кода
 
                 for (int seconds = 60; seconds > 0; seconds--) {
                     try {

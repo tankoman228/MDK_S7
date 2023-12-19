@@ -3,18 +3,16 @@ package com.example.mdk_s7;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ActivityOnBoard extends AppCompatActivity {
 
-    ImageView ivMeth, ivDock, ivTalk;
+    ImageView ivAnalyse, ivDock, ivTalk;
     TextView tvHeader, tvText;
     ImageView[] bubbles;
     Button btn;
@@ -29,11 +27,8 @@ public class ActivityOnBoard extends AppCompatActivity {
 
         getWindow().setBackgroundDrawable(getResources().getDrawable(R.color.white));
 
-        //TODO: Удалить эту строчку нахрен, перед сдачей!
-        startActivity(new Intent(this, ActivityCreateCard.class));
-
         ivDock = findViewById(R.id.ivDoc);
-        ivMeth = findViewById(R.id.ivMeth);
+        ivAnalyse = findViewById(R.id.ivMeth);
         ivTalk = findViewById(R.id.ivTalk);
 
         tvHeader = findViewById(R.id.tvHeader);
@@ -77,7 +72,7 @@ public class ActivityOnBoard extends AppCompatActivity {
         bubbles[stage].startAnimation(a);
         switch (stage) {
             case 0:
-                ivMeth.startAnimation(a);
+                ivAnalyse.startAnimation(a);
                 tvText.startAnimation(a);
                 tvHeader.startAnimation(a);
 
@@ -107,7 +102,7 @@ public class ActivityOnBoard extends AppCompatActivity {
         bubbles[previous_stage].startAnimation(a2);
         switch (previous_stage) {
             case 0:
-                ivMeth.startAnimation(a2);
+                ivAnalyse.startAnimation(a2);
                 break;
             case 1:
                 ivTalk.startAnimation(a2);
