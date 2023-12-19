@@ -6,6 +6,10 @@
             <stroke
                 android:color="@color/greyEditTextStroke"
                 android:width="2dp"/>
+            <padding android:left="10dp"
+                android:top="10dp"
+                android:bottom="10dp"
+                android:right="10dp"/>
             <solid android:color="@color/white" />
         </shape>
     </item>
@@ -15,6 +19,10 @@
             <stroke
                 android:color="@color/greyEditTextStroke"
                 android:width="2dp"/>
+            <padding android:left="10dp"
+                android:top="10dp"
+                android:bottom="10dp"
+                android:right="10dp"/>
             <solid android:color="@color/greyButton" />
         </shape>
     </item>

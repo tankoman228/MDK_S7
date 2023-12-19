@@ -58,11 +58,11 @@ public class AdapterAnalysis extends BaseAdapter {
 
         Analysis thisAnalysis = getAnalysis(position);
 
-        ((TextView) view.findViewById(R.id.tvServiceame)).setText(thisAnalysis.Title);
-        ((TextView) view.findViewById(R.id.tvServiceCost)).setText(thisAnalysis.Cost);
-        ((TextView) view.findViewById(R.id.tvServiceDays)).setText(thisAnalysis.Time);
+        ((TextView) view.findViewById(R.id.tvBinName)).setText(thisAnalysis.Title);
+        ((TextView) view.findViewById(R.id.tvBinCost)).setText(thisAnalysis.Cost);
+        ((TextView) view.findViewById(R.id.tvBinPatients)).setText(thisAnalysis.Time);
 
-        Button btn = view.findViewById(R.id.btnServiceAdd);
+        Button btn = view.findViewById(R.id.btnBinAdd);
 
         Context context = view.getContext();
         btn.setOnClickListener(v -> {
