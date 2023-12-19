@@ -85,7 +85,7 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         });
 
         //Кнопка в корзину
-        btn_basket = view.findViewById(R.id.button);
+        btn_basket = view.findViewById(R.id.btnBasket);
         btn_basket.setOnClickListener(l -> startActivity(new Intent(getContext(), ActivityBin.class)));
 
         //Доп. Инфа об анализе
