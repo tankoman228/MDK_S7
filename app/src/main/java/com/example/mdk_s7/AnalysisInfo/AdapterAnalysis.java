@@ -15,8 +15,8 @@ import com.example.mdk_s7.ToActivityConnectable;
 public class AdapterAnalysis extends BaseAdapter {
     Context ctx;
     LayoutInflater lInflater;
-    ArrayList<Analysis> objects;
 
+    public static ArrayList<Analysis> objects;
     public static  ArrayList<Analysis> chosen_objects;
     public static ToActivityConnectable fragmentAnalyse;
 
@@ -24,7 +24,10 @@ public class AdapterAnalysis extends BaseAdapter {
     public AdapterAnalysis(Context context, ArrayList<Analysis> products) {
         ctx = context;
         objects = products;
-        chosen_objects = new ArrayList<>();
+
+        if (chosen_objects == null)
+            chosen_objects = new ArrayList<>();
+
         lInflater = (LayoutInflater) ctx
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -62,9 +65,15 @@ public class AdapterAnalysis extends BaseAdapter {
         ((TextView) view.findViewById(R.id.tvBinCost)).setText(thisAnalysis.Cost);
         ((TextView) view.findViewById(R.id.tvBinPatients)).setText(thisAnalysis.Time);
 
-        Button btn = view.findViewById(R.id.btnBinAdd);
-
         Context context = view.getContext();
+
+        Button btn = view.findViewById(R.id.btnBinAdd);
+        if (chosen_objects.contains(thisAnalysis)) {
+            btn.setBackground(context.getDrawable(R.drawable.buttons_white_borders_blue));
+            btn.setTextColor(context.getColor(R.color.blueButton));
+            btn.setText(R.string.remove);
+        }
+
         btn.setOnClickListener(v -> {
 
             if (chosen_objects.contains(thisAnalysis)) {
@@ -87,6 +96,10 @@ public class AdapterAnalysis extends BaseAdapter {
 
                 fragmentAnalyse.sendMeMessage(true);
             }
+        });
+
+        view.findViewById(R.id.tvClickBanner).setOnClickListener(l -> {
+            fragmentAnalyse.onClickItem(thisAnalysis);
         });
 
         return view;

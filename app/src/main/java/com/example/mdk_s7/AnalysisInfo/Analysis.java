@@ -1,12 +1,15 @@
 package com.example.mdk_s7.AnalysisInfo;
 
 public class Analysis {
-    public String Title, Time, Cost;
+    public String Title, Time, Cost, Description, Preparing, Material;
 
-    public Analysis(String t, String tm, String c) {
+    public Analysis(String t, String tm, String c, String d, String p, String m) {
         Title = t;
         Time = tm;
         Cost = c;
+        Description = d;
+        Preparing = p;
+        Material = m;
     }
 
     public int getPrice() {

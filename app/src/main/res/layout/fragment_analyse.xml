@@ -10,32 +10,32 @@
         android:id="@+id/ivMoreBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@color/black_transperent"
         android:elevation="3dp"
-        android:visibility="gone"/>
+        android:src="@color/black_transperent"
+        android:visibility="invisible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/llAbout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
-        android:orientation="vertical"
+        android:layout_marginTop="100dp"
         android:background="@drawable/background_layout_about"
         android:elevation="5dp"
+        android:orientation="vertical"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
-        android:visibility="gone">
+        android:visibility="invisible">
 
         <TextView
             android:id="@+id/tvAboutTitle"
-            android:layout_width="260dp"
-            android:layout_height="28dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
+            android:layout_marginEnd="8dp"
             android:text="Название"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,6 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="TextView"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
@@ -77,6 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="TextView"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPrepare" />
@@ -113,9 +115,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
-                    android:textColor="@color/greyText"
                     android:layout_weight="1"
-                    android:text="Результаты через:" />
+                    android:text="Результаты через:"
+                    android:textColor="@color/greyText" />
 
                 <TextView
                     android:id="@+id/tvDeadlineText"
@@ -123,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -135,10 +137,10 @@
                     android:id="@+id/tvBioMaterial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/greyText"
                     android:layout_marginBottom="4dp"
-                    android:text="Биоматериал:" />
+                    android:layout_weight="1"
+                    android:text="Биоматериал:"
+                    android:textColor="@color/greyText" />
 
                 <TextView
                     android:id="@+id/tvBioMaterialText"
@@ -146,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
@@ -181,7 +183,7 @@
             android:background="@drawable/edittext"
             android:drawableLeft="@drawable/search"
             android:ems="10"
-            android:hint="Искать analизы"
+            android:hint="@string/search_analysis"
             android:inputType="text" />
 
         <ImageView
