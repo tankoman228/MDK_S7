@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mdk_s7.AnalysisInfo.*;
@@ -29,6 +30,8 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
     Button[] btns_categories;
     Button btn_basket;
     ListView listView;
+    TextView tvPrice;
+
     int id_current_type = 0;
 
     @Override
@@ -54,6 +57,9 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         btn_basket = view.findViewById(R.id.button);
         btn_basket.setOnClickListener(l -> startActivity(new Intent(getContext(), ActivityOnBoard.class)));
         btn_basket.setVisibility(View.INVISIBLE);
+
+        tvPrice = view.findViewById(R.id.tvPrice);
+        tvPrice.setVisibility(View.INVISIBLE);
 
         AdapterAnalysis.fragmentAnalyse = this;
         reload_analysis();
@@ -84,7 +90,7 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         AdapterAnalysis adapter = new AdapterAnalysis(this.getContext(), ans);
         listView.setAdapter(adapter);
 
-        int totalHeight = 266;
+        int totalHeight = 300;
         for (int i = 0; i < adapter.getCount(); i++) {
             View listItem = adapter.getView(i, null, listView);
             if (listItem != null) {
@@ -97,7 +103,7 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         }
 
         ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = totalHeight
+        params.height = totalHeight / 2
                 + (listView.getDividerHeight() * (adapter.getCount() - 1));
         listView.setLayoutParams(params);
         listView.requestLayout();
@@ -108,9 +114,18 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         boolean i = (boolean) obj;
         if (AdapterAnalysis.chosen_objects.size() > 0) {
             btn_basket.setVisibility(View.VISIBLE);
+            tvPrice.setVisibility(View.VISIBLE);
+
+            int price_sum = 0;
+            for (Analysis a : AdapterAnalysis.chosen_objects) {
+                price_sum += a.getPrice();
+            }
+            tvPrice.setText(String.format("%s %S", price_sum, AdapterAnalysis.chosen_objects.get(0).getCurrency()));
+
         }
         else {
             btn_basket.setVisibility(View.INVISIBLE);
+            tvPrice.setVisibility(View.INVISIBLE);
         }
     }
 }

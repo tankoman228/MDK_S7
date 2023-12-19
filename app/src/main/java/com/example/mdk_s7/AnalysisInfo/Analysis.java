@@ -8,4 +8,11 @@ public class Analysis {
         Time = tm;
         Cost = c;
     }
+
+    public int getPrice() {
+        return Integer.valueOf(Cost.substring(0, Cost.length() - 2));
+    }
+    public String getCurrency() {
+        return Cost.substring(Cost.length() - 1);
+    }
 }

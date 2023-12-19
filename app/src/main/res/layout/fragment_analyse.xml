@@ -24,6 +24,12 @@
             android:drawableLeft="@drawable/search"
             android:background="@drawable/edittext"/>
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="5sp"
+            android:src="@color/white" />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,6 +78,10 @@
                             android:layout_marginLeft="24dp"
                             android:layout_weight="1"
                             android:src="@drawable/banner2" />
+
+                        <TextView
+                            android:layout_width="24dp"
+                            android:layout_height="0sp"></TextView>
                     </LinearLayout>
                 </HorizontalScrollView>
 
@@ -129,18 +139,27 @@
                             android:text="Комплексные"
                             android:textSize="15dp"
                             android:textColor="@color/greyText"/>
+
+                        <TextView
+                            android:layout_width="24sp"
+                            android:layout_height="0sp"></TextView>
                     </LinearLayout>
                 </HorizontalScrollView>
 
                 <ListView
                     android:id="@+id/lvAnalysis"
-                    android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="1dp"
                     android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="1dp"
-                    android:layout_marginRight="24dp" />
+                    android:layout_marginRight="24dp"
+                    android:divider="@null"
+                    android:dividerHeight="18dp"
+                    android:paddingStart="24sp"
+                    android:paddingTop="15sp"
+                    android:paddingEnd="15sp" />
             </LinearLayout>
         </ScrollView>
 
@@ -150,13 +169,29 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="  Корзина300$"
-        android:drawableLeft="@drawable/basket"
-        android:background="@drawable/buttons_blue"
-        android:textColor="@color/white"
-        android:layout_marginBottom="25dp"
+        android:layout_gravity="bottom|center_horizontal"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/buttons_blue"
+        android:drawableLeft="@drawable/basket"
         android:gravity="center_vertical"
-        android:layout_gravity="bottom|center_horizontal"/>
+        android:text="  Корзина"
+        android:textColor="@color/white">
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="25dp"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:text="300 $"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
 </FrameLayout>
