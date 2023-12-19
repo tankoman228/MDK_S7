@@ -1,5 +1,6 @@
 package com.example.mdk_s7.AnalysisInfo;
 
+//Анализ из базы (в нашем случае просто тестовые данные)
 public class Analysis {
     public String Title, Time, Cost, Description, Preparing, Material;
     public int countInBasket = 1;

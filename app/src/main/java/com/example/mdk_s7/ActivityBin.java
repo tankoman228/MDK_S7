@@ -28,11 +28,12 @@ public class ActivityBin extends AppCompatActivity implements ToActivityConnecta
 
         findViewById(R.id.btnBinBack).setOnClickListener(l -> startActivity(new Intent(this, ActivityMain.class)));
 
-        AdapterBin.activityBin = this;
+        AdapterBin.activityBin = this; //Обмен указателями. НЕ ЗАБЫВАТЬ ПРО ЭТУ СТРОЧКУ!
 
         sendMeMessage(true);
     }
 
+    //Когда ткнут что-нибудь в одном из элементов списка выбранных услуг, вызовется этот метод
     @Override
     public void sendMeMessage(Object obj) {
 
@@ -40,9 +41,11 @@ public class ActivityBin extends AppCompatActivity implements ToActivityConnecta
             startActivity(new Intent(this, ActivityMain.class));
 
 
-        AdapterBin adapter = new AdapterBin(this, AdapterAnalysis.chosen_objects);
+        //Переопределяем адаптер
+        AdapterBin adapter = new AdapterBin(this);
         lv.setAdapter(adapter);
 
+        //Считаем высоту
         int totalHeight = 200;
         for (int i = 0; i < adapter.getCount(); i++) {
             View listItem = adapter.getView(i, null, lv);
@@ -54,14 +57,14 @@ public class ActivityBin extends AppCompatActivity implements ToActivityConnecta
 
             totalHeight += listItem.getMeasuredHeight();
         }
-
         ViewGroup.LayoutParams params = lv.getLayoutParams();
-        params.height = totalHeight
+        params.height = (int)((float)totalHeight / 1.5)
                 + (lv.getDividerHeight() * (adapter.getCount() - 1));
         lv.setLayoutParams(params);
         lv.requestLayout();
 
 
+        //Считаем сумму цен
         int price_sum = 0;
         for (Analysis a : AdapterAnalysis.chosen_objects) {
             price_sum += a.getPrice() * a.countInBasket;
@@ -70,5 +73,5 @@ public class ActivityBin extends AppCompatActivity implements ToActivityConnecta
     }
 
     @Override
-    public void onClickItem(Object obj) {}
+    public void onClickItem(Object obj) {} //Пусто, но надо определить метод из интерфейса
 }

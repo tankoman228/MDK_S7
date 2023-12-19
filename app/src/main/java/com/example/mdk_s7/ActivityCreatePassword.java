@@ -26,6 +26,7 @@ public class ActivityCreatePassword extends AppCompatActivity {
 
         balls = new RadioButton[] {findViewById(R.id.ball1), findViewById(R.id.ball2), findViewById(R.id.ball3), findViewById(R.id.ball4)};
 
+        //Циферки
         findViewById(R.id.btn0).setOnClickListener(l -> input(0));
         findViewById(R.id.btn1).setOnClickListener(l -> input(1));
         findViewById(R.id.btn2).setOnClickListener(l -> input(2));
@@ -49,6 +50,8 @@ public class ActivityCreatePassword extends AppCompatActivity {
 
         if (digits_i == 4)
             return;
+
+
 
         digits[digits_i] = digit;
         digits_i++;

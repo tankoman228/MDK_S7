@@ -21,9 +21,9 @@ public class AdapterAnalysis extends BaseAdapter {
     public static ToActivityConnectable fragmentAnalyse;
 
 
-    public AdapterAnalysis(Context context, ArrayList<Analysis> products) {
+    public AdapterAnalysis(Context context, ArrayList<Analysis> objList) {
         ctx = context;
-        objects = products;
+        objects = objList;
 
         if (chosen_objects == null)
             chosen_objects = new ArrayList<>();

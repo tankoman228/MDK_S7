@@ -27,6 +27,8 @@ public class ActivityCreateCard extends AppCompatActivity{
 
         btn = findViewById(R.id.btnCreateCard);
 
+
+        //Выпадающий список ------------ {
         sp = findViewById(R.id.spGender);
         ArrayAdapter<CharSequence> spAdapter = ArrayAdapter.createFromResource(
                 this,
@@ -38,13 +40,14 @@ public class ActivityCreateCard extends AppCompatActivity{
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                check_fields();
+                check_fields(); //Выпадающий список, когда выбрали элемент
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 check_fields();
             }
         });
+        //------------------------------}
 
         findViewById(R.id.btnSkipCard).setOnClickListener(l -> {
             startActivity(new Intent(this, ActivityMain.class));
@@ -55,6 +58,7 @@ public class ActivityCreateCard extends AppCompatActivity{
         });
 
 
+        //Поля. Каждое проверим, чтобы было заполнено, проверка идёт после редактирования любого из полей
         ets = new EditText[] {
                 findViewById(R.id.etName),
                 findViewById(R.id.etSurname),
@@ -73,6 +77,7 @@ public class ActivityCreateCard extends AppCompatActivity{
         }
     }
 
+    //Проыерка всех полей на заполненность
     void check_fields() {
 
         btn.setEnabled(false);

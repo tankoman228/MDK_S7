@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.mdk_s7.FragmentAnalyse;
 import com.example.mdk_s7.R;
 import com.example.mdk_s7.ToActivityConnectable;
 
@@ -20,9 +21,9 @@ public class AdapterBin extends BaseAdapter {
     public static ToActivityConnectable activityBin;
 
 
-    public AdapterBin(Context context, ArrayList<Analysis> products) {
+    public AdapterBin(Context context) {
         ctx = context;
-        objects = products;
+        objects = AdapterAnalysis.chosen_objects;
 
         lInflater = (LayoutInflater) ctx
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -53,6 +54,7 @@ public class AdapterBin extends BaseAdapter {
             view = lInflater.inflate(R.layout.item_bin, parent, false);
         }
 
+        //Получаем анализ, который отображается тут
         Analysis thisAnalysis = getAnalysis(position);
 
         ((TextView) view.findViewById(R.id.tvItemBinName)).setText(thisAnalysis.Title);
@@ -62,6 +64,7 @@ public class AdapterBin extends BaseAdapter {
 
         TextView tvPatients = view.findViewById(R.id.tvBinPatients);
 
+        //Пациент, пациентов, пациента
         if (thisAnalysis.countInBasket % 10 > 1 && thisAnalysis.countInBasket % 10 < 5 && (thisAnalysis.countInBasket % 100 < 10 || thisAnalysis.countInBasket % 100 >= 20))
             tvPatients.setText(String.valueOf(thisAnalysis.countInBasket) + view.getContext().getString(R.string._patients25));
         else if (thisAnalysis.countInBasket != 11 && thisAnalysis.countInBasket % 10 == 1)
@@ -69,6 +72,7 @@ public class AdapterBin extends BaseAdapter {
         else
             tvPatients.setText(String.valueOf(thisAnalysis.countInBasket) + view.getContext().getString(R.string._patients_many));
 
+        //Кнопки
         view.findViewById(R.id.btnBinClear).setOnClickListener(l -> {
             thisAnalysis.countInBasket--;
             if (thisAnalysis.countInBasket < 1)

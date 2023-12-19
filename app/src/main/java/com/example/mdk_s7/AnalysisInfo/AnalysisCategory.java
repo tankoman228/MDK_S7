@@ -1,5 +1,6 @@
 package com.example.mdk_s7.AnalysisInfo;
 
+//Категория анализов. Пока что только для красоты
 public class AnalysisCategory {
 
     public String Name = "UNDEFINED TYPE";
