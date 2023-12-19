@@ -1,7 +1,6 @@
 package com.example.mdk_s7.AnalysisInfo;
 
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -57,21 +56,34 @@ public class AdapterBin extends BaseAdapter {
         Analysis thisAnalysis = getAnalysis(position);
 
         ((TextView) view.findViewById(R.id.tvItemBinName)).setText(thisAnalysis.Title);
-        TextView tvCost = view.findViewById(R.id.tvBinCost); tvCost.setText(thisAnalysis.Cost);
+
+        TextView tvCost = view.findViewById(R.id.tvBinCost);
+        tvCost.setText(String.valueOf(thisAnalysis.countInBasket * thisAnalysis.getPrice()) + " " + thisAnalysis.getCurrency());
 
         TextView tvPatients = view.findViewById(R.id.tvBinPatients);
-        tvPatients.setText("1" + view.getContext().getString(R.string._patient));
 
+        if (thisAnalysis.countInBasket % 10 > 1 && thisAnalysis.countInBasket % 10 < 5 && (thisAnalysis.countInBasket % 100 < 10 || thisAnalysis.countInBasket % 100 >= 20))
+            tvPatients.setText(String.valueOf(thisAnalysis.countInBasket) + view.getContext().getString(R.string._patients25));
+        else if (thisAnalysis.countInBasket != 11 && thisAnalysis.countInBasket % 10 == 1)
+            tvPatients.setText(String.valueOf(thisAnalysis.countInBasket) + view.getContext().getString(R.string._patient));
+        else
+            tvPatients.setText(String.valueOf(thisAnalysis.countInBasket) + view.getContext().getString(R.string._patients_many));
 
         view.findViewById(R.id.btnBinClear).setOnClickListener(l -> {
-            thisAnalysis.num--;
-            if (thisAnalysis.num < 1)
-                objects.remove(thisAnalysis);
-            activityBin.sendMeMessage(false);
+            thisAnalysis.countInBasket--;
+            if (thisAnalysis.countInBasket < 1)
+                thisAnalysis.countInBasket = 1;
+            else
+                activityBin.sendMeMessage(false);
         });
         view.findViewById(R.id.btnBinAdd).setOnClickListener(l -> {
-            thisAnalysis.num++;
+            thisAnalysis.countInBasket++;
             activityBin.sendMeMessage(true);
+        });
+        view.findViewById(R.id.btnBinClose).setOnClickListener(l -> {
+            thisAnalysis.countInBasket = 1;
+            objects.remove(thisAnalysis);
+            activityBin.sendMeMessage(false);
         });
 
         return view;

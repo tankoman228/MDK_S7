@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textSize="14dp"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
@@ -26,13 +26,11 @@
         android:id="@+id/tvBinCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="42dp"
         android:text="TextView"
         android:textSize="17dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tvBinPatients"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvItemBinName" />
 
@@ -49,18 +47,19 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="70sp"
+        android:layout_height="35sp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBinPatients"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBinClose">
+        app:layout_constraintTop_toTopOf="@+id/tvBinPatients">
 
         <ImageButton
             android:id="@+id/btnBinClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@drawable/buttons_grey_pair_left"
             android:src="@drawable/minus" />
 
@@ -74,6 +73,7 @@
             android:id="@+id/btnBinAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@drawable/buttons_grey_pair_right"
             android:src="@drawable/plus"
             android:textColor="@color/white" />

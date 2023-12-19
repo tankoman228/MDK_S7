@@ -161,7 +161,6 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
                 price_sum += a.getPrice();
             }
             tvPrice.setText(String.format("%s %S", price_sum, AdapterAnalysis.chosen_objects.get(0).getCurrency()));
-
         }
         else {
             btn_basket.setVisibility(View.INVISIBLE);

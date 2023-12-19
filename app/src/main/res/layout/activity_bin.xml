@@ -55,10 +55,12 @@
     <ScrollView
         android:id="@+id/svBin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/llBinTitle">
@@ -71,7 +73,7 @@
             <ListView
                 android:id="@+id/lvBin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="9999sp"
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="16dp"
@@ -83,35 +85,40 @@
                 android:paddingTop="15sp"
                 android:paddingEnd="15sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:orientation="horizontal"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp">
-
-                <TextView
-                    android:id="@+id/tvBinSumText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvBinSum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="TextView"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOrdering"
+        app:layout_constraintEnd_toEndOf="@+id/btnOrdering"
+        app:layout_constraintStart_toStartOf="@+id/btnOrdering">
+
+        <TextView
+            android:id="@+id/tvBinSumText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Сумма"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBinSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="TextView"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnOrdering"
