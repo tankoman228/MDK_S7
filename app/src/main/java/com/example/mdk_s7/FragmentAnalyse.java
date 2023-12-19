@@ -37,12 +37,8 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Button updateButton = view.findViewById(R.id.btnAnalysisPopular);
 
         listView = view.findViewById(R.id.lvAnalysis);
-        updateButton.setOnClickListener(v -> {
-            Toast.makeText(this.getContext(), "fefe", Toast.LENGTH_SHORT).show();
-        });
 
         btns_categories = new Button[] {
                 view.findViewById(R.id.btnAnalysisPopular),
@@ -55,7 +51,7 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         }
 
         btn_basket = view.findViewById(R.id.button);
-        btn_basket.setOnClickListener(l -> startActivity(new Intent(getContext(), ActivityOnBoard.class)));
+        btn_basket.setOnClickListener(l -> startActivity(new Intent(getContext(), BinActivity.class)));
         btn_basket.setVisibility(View.INVISIBLE);
 
         tvPrice = view.findViewById(R.id.tvPrice);
