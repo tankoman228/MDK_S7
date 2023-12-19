@@ -48,4 +48,5 @@
     <string name="vein_blood">Венозная кровь</string>
     <string name="search_analysis">Искать анализы</string>
     <string name="add_with_cost">"Добавить за "</string>
+    <string name="_patient">" пациент"</string>
 </resources>

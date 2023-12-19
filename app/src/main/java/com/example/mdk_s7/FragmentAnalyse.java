@@ -85,7 +85,7 @@ public class FragmentAnalyse extends Fragment implements ToActivityConnectable {
         });
 
         btn_basket = view.findViewById(R.id.button);
-        btn_basket.setOnClickListener(l -> startActivity(new Intent(getContext(), BinActivity.class)));
+        btn_basket.setOnClickListener(l -> startActivity(new Intent(getContext(), ActivityBin.class)));
 
         tvPrice = view.findViewById(R.id.tvPrice);
         tvPrice.setVisibility(View.INVISIBLE);

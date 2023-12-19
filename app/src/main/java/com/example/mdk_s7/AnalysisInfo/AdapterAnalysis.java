@@ -56,7 +56,7 @@ public class AdapterAnalysis extends BaseAdapter {
 
         View view = convertView;
         if (view == null) {
-            view = lInflater.inflate(R.layout.item_tests, parent, false);
+            view = lInflater.inflate(R.layout.item_analysis, parent, false);
         }
 
         Analysis thisAnalysis = getAnalysis(position);
