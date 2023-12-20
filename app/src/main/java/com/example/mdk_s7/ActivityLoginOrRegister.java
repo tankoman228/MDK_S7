@@ -73,9 +73,14 @@ public class ActivityLoginOrRegister extends AppCompatActivity {
 
         Matcher mat = email_pattern.matcher(s);
 
-        if(mat.matches())
+        if(mat.matches()){
             btnEnter.setEnabled(true);
-        else
+            btnEnter.setBackground(getDrawable(R.drawable.buttons_blue));
+        }
+        else{
             btnEnter.setEnabled(false);
+            btnEnter.setBackground(getDrawable(R.drawable.buttons_blocked));
+        }
+
     }
 }

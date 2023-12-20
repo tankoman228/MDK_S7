@@ -27,7 +27,6 @@ public class ActivityCreateCard extends AppCompatActivity{
 
         btn = findViewById(R.id.btnCreateCard);
 
-
         //Выпадающий список ------------ {
         sp = findViewById(R.id.spGender);
         ArrayAdapter<CharSequence> spAdapter = ArrayAdapter.createFromResource(
@@ -81,6 +80,7 @@ public class ActivityCreateCard extends AppCompatActivity{
     void check_fields() {
 
         btn.setEnabled(false);
+        btn.setBackground(getDrawable(R.drawable.buttons_blocked));
         if (!sp.getSelectedItem().toString().equals(getResources().getStringArray(R.array.genders)[0]) &&
                 !sp.getSelectedItem().toString().equals(getResources().getStringArray(R.array.genders)[1])) {
             return;
@@ -92,5 +92,6 @@ public class ActivityCreateCard extends AppCompatActivity{
         }
 
         btn.setEnabled(true);
+        btn.setBackground(getDrawable(R.drawable.buttons_blue));
     }
 }
