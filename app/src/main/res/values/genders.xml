@@ -3,13 +3,6 @@
     <string-array name="genders">
         <item>Мужчина</item>
         <item>Женщина</item>
-        <item>Atack helicopter</item>
-        <item>Heavy battle tank</item>
-        <item>Равлик</item>
-        <item>Бобёр</item>
-        <item>Автомат по МДК</item>
-        <item>Трансформаторная будка</item>
-        <item>Анекдот про Штирлица</item>
-        <item>Анекдот про Шуршунчика</item>
+        <item>Вертолет</item>
     </string-array>
 </resources>

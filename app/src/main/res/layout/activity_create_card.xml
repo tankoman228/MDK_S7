@@ -111,16 +111,33 @@
                 android:inputType="date"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black_hint" />
-
-            <Spinner
-                android:id="@+id/spGender"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/edittext"
-                android:hint="Пол"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+                <Spinner
+                    android:id="@+id/spGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edittext"
+                    android:hint="Пол"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/down_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <Button
                 android:id="@+id/btnCreateCard"
