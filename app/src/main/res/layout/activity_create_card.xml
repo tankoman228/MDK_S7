@@ -120,8 +120,7 @@
                 android:background="@drawable/edittext"
                 android:hint="Пол"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:dropDownSelector="@drawable/fuck"/>
+                android:textColorHint="@color/black" />
 
             <Button
                 android:id="@+id/btnCreateCard"
